@@ -1,6 +1,7 @@
 
 #importing modules
 import os, sys, argparse, glob
+#dictionary with file names (thinking of having another program that can automate the writing of larger dictionaries
 Dict = {1: 's47_EDSW210019158-1a_HNT5FDSX2_L4_1.fq.gz', 2: 's47_EDSW210019158-1a_HNT5FDSX2_L4_2.fq.gz',
         3: 's51_EDSW210019162-1a_HNT5FDSX2_L3_1.fq.gz', 4: 's51_EDSW210019162-1a_HNT5FDSX2_L3_2.fq.gz',
         5: 's46_EDSW210019157-1a_HNT5FDSX2_L4_1.fq.gz', 6: 's46_EDSW210019157-1a_HNT5FDSX2_L4_2.fq.gz',
@@ -12,7 +13,7 @@ Dict = {1: 's47_EDSW210019158-1a_HNT5FDSX2_L4_1.fq.gz', 2: 's47_EDSW210019158-1a
         17: 's29_EDSW210019140-1a_HNT5FDSX2_L1_1.fq.gz', 18: "s29_EDSW210019140-1a_HNT5FDSX2_L1_2.fq.gz",}
 
 
-
+#user input for hps cluster 
 mem = input('How much memory would you like to use? (e.g. 16):')
 time = input('How long would you like the job to run for? (e.g. 05:00:00):')
 partition = 'hpc'
@@ -20,7 +21,7 @@ name = input('Create a job name:')
 o = input('Choose output location with full path:')
 
 
-# Create batch files for
+# Create batch files 
 out_file = open('index_file.sh', 'w')
 out_file.write(f"#!/bin/bash\n" +
                f"#SBATCH --job-name{name}\n" +
