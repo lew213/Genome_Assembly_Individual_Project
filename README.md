@@ -6,3 +6,6 @@ files required to be read from the same directory as the script is ran as the sc
 only allows 10 assemblies at a time 
 
 the script takes a dictionary and reads the files into command lines. 
+
+the final file can be found by search index_file into the mac finder - future updates will be 
+able to write script to a specified location 
