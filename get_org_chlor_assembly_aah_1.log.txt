@@ -1,0 +1,123 @@
+
+GetOrganelle v1.7.6.1
+
+get_organelle_from_reads.py assembles organelle genomes from genome skimming data.
+Find updates in https://github.com/Kinggerm/GetOrganelle and see README.md for more information.
+
+Python 3.9.12 | packaged by conda-forge | (main, Mar 24 2022, 23:27:05)  [Clang 12.0.1 ]
+PLATFORM: Darwin Lewiss-MacBook-Pro-2.local 20.3.0 Darwin Kernel Version 20.3.0: Thu Jan 21 00:07:06 PST 2021; root:xnu-7195.81.3~1/RELEASE_X86_64 x86_64 i386
+PYTHON LIBS: GetOrganelleLib 1.7.6.1; numpy 1.22.4; sympy 1.10.1; scipy 1.8.1
+DEPENDENCIES: Bowtie2 2.4.5; SPAdes 3.15.2; Blast 2.6.0
+GETORG_PATH=/Users/lewiswood/.GetOrganelle
+SEED  DB: embplant_pt 0.0.0; embplant_mt 0.0.1.minima
+LABEL DB: embplant_pt 0.0.1; embplant_mt 0.0.1
+WORKING DIR: /Users/lewiswood/Desktop
+/Users/lewiswood/opt/anaconda3/envs/indv_pro/bin/get_organelle_from_reads.py -1 /Users/lewiswood/Desktop/backup_data/s47_EDSW210019158-1a_HNT5FDSX2_L4_1.fq.gz -2 /Users/lewiswood/Desktop/backup_data/s47_EDSW210019158-1a_HNT5FDSX2_L4_2.fq.gz -o AAz -F embplant_pt -R 10 --overwrite
+
+2022-06-02 15:16:27,085 - INFO: Pre-reading fastq ...
+2022-06-02 15:16:27,086 - INFO: Estimating reads to use ... (to use all reads, set '--reduce-reads-for-coverage inf --max-reads inf')
+2022-06-02 15:16:27,193 - INFO: Tasting 100000+100000 reads ...
+2022-06-02 15:16:47,363 - INFO: Estimating reads to use finished.
+2022-06-02 15:16:47,364 - INFO: Unzipping reads file: /Users/lewiswood/Desktop/backup_data/s47_EDSW210019158-1a_HNT5FDSX2_L4_1.fq.gz (468451328 bytes)
+2022-06-02 15:16:53,677 - INFO: Unzipping reads file: /Users/lewiswood/Desktop/backup_data/s47_EDSW210019158-1a_HNT5FDSX2_L4_2.fq.gz (578420736 bytes)
+2022-06-02 15:16:59,538 - INFO: Counting read qualities ...
+2022-06-02 15:16:59,707 - INFO: Identified quality encoding format = Sanger
+2022-06-02 15:16:59,707 - INFO: Phred offset = 33
+2022-06-02 15:16:59,709 - INFO: Trimming bases with qualities (0.00%): 33..33  !
+2022-06-02 15:16:59,758 - INFO: Mean error rate = 0.004
+2022-06-02 15:16:59,760 - INFO: Counting read lengths ...
+2022-06-02 15:17:16,162 - INFO: Mean = 150.0 bp, maximum = 150 bp.
+2022-06-02 15:17:16,162 - INFO: Reads used = 4939865+4939865
+2022-06-02 15:17:16,162 - INFO: Pre-reading fastq finished.
+
+2022-06-02 15:17:16,162 - INFO: Making seed reads ...
+2022-06-02 15:17:16,163 - INFO: Seed bowtie2 index existed!
+2022-06-02 15:17:16,163 - INFO: Mapping reads to seed bowtie2 index ...
+2022-06-02 15:23:28,107 - INFO: Mapping finished.
+2022-06-02 15:23:28,108 - INFO: Seed reads made: AAz/seed/embplant_pt.initial.fq (269558266 bytes)
+2022-06-02 15:23:28,108 - INFO: Making seed reads finished.
+
+2022-06-02 15:23:28,108 - INFO: Checking seed reads and parameters ...
+2022-06-02 15:23:28,108 - INFO: The automatically-estimated parameter(s) do not ensure the best choice(s).
+2022-06-02 15:23:28,108 - INFO: If the result graph is not a circular organelle genome, 
+2022-06-02 15:23:28,109 - INFO:   you could adjust the value(s) of '-w'/'-R' for another new run.
+2022-06-02 15:24:05,988 - INFO: Pre-assembling mapped reads ...
+2022-06-02 15:25:08,776 - INFO: Pre-assembling mapped reads finished.
+2022-06-02 15:25:08,777 - INFO: Estimated embplant_pt-hitting base-coverage = 979.12
+2022-06-02 15:25:09,225 - INFO: Reads reduced to = 2522598+2522598
+2022-06-02 15:25:09,225 - INFO: Adjusting expected embplant_pt base coverage to 500.00
+2022-06-02 15:25:09,225 - INFO: Estimated word size(s): 112
+2022-06-02 15:25:09,225 - INFO: Setting '-w 112'
+2022-06-02 15:25:09,226 - INFO: Setting '--max-extending-len inf'
+2022-06-02 15:25:10,737 - INFO: Checking seed reads and parameters finished.
+
+2022-06-02 15:25:10,737 - INFO: Making read index ...
+2022-06-02 15:25:27,541 - INFO: For AAz/1-s47_EDSW210019158-1a_HNT5FDSX2_L4_1.fq.gz.fastq, only top 2522598 reads are used in downstream analysis.
+2022-06-02 15:25:44,474 - INFO: For AAz/2-s47_EDSW210019158-1a_HNT5FDSX2_L4_2.fq.gz.fastq, only top 2522598 reads are used in downstream analysis.
+2022-06-02 15:25:48,891 - INFO: 4319034 candidates in all 5045196 reads
+2022-06-02 15:25:48,894 - INFO: Pre-grouping reads ...
+2022-06-02 15:25:48,894 - INFO: Setting '--pre-w 112'
+2022-06-02 15:25:50,020 - INFO: 200000/442368 used/duplicated
+2022-06-02 15:26:06,423 - INFO: 6692 groups made.
+2022-06-02 15:26:07,274 - INFO: Making read index finished.
+
+2022-06-02 15:26:07,274 - INFO: Extending ...
+2022-06-02 15:26:07,274 - INFO: Adding initial words ...
+2022-06-02 15:26:31,631 - INFO: AW 6040666
+2022-06-02 15:27:02,790 - INFO: Round 1: 4319034/4319034 AI 185217 AW 6264882
+2022-06-02 15:27:30,345 - INFO: Round 2: 4319034/4319034 AI 186353 AW 6287560
+2022-06-02 15:27:56,158 - INFO: Round 3: 4319034/4319034 AI 186860 AW 6294198
+2022-06-02 15:28:22,199 - INFO: Round 4: 4319034/4319034 AI 187193 AW 6298608
+2022-06-02 15:28:48,033 - INFO: Round 5: 4319034/4319034 AI 187529 AW 6303076
+2022-06-02 15:29:13,521 - INFO: Round 6: 4319034/4319034 AI 187892 AW 6307800
+2022-06-02 15:29:38,801 - INFO: Round 7: 4319034/4319034 AI 188260 AW 6312234
+2022-06-02 15:30:05,984 - INFO: Round 8: 4319034/4319034 AI 188538 AW 6316070
+2022-06-02 15:30:32,750 - INFO: Round 9: 4319034/4319034 AI 188931 AW 6320528
+2022-06-02 15:31:02,816 - INFO: Round 10: 4319034/4319034 AI 189359 AW 6325628
+2022-06-02 15:31:02,817 - INFO: Hit the round limit 10 and terminated ...
+2022-06-02 15:31:13,111 - INFO: Extending finished.
+
+2022-06-02 15:31:13,329 - INFO: Separating extended fastq file ... 
+2022-06-02 15:31:14,913 - INFO: Setting '-k 21,55,85,115'
+2022-06-02 15:31:14,913 - INFO: Assembling using SPAdes ...
+2022-06-02 15:31:14,946 - INFO: spades.py -t 1  --phred-offset 33 -1 AAz/extended_1_paired.fq -2 AAz/extended_2_paired.fq --s1 AAz/extended_1_unpaired.fq --s2 AAz/extended_2_unpaired.fq -k 21,55,85,115 -o AAz/extended_spades
+2022-06-02 15:36:21,927 - INFO: Insert size = 330.483, deviation = 59.1802, left quantile = 258, right quantile = 406
+2022-06-02 15:36:21,927 - INFO: Assembling finished.
+
+2022-06-02 15:36:24,059 - INFO: Slimming AAz/extended_spades/K115/assembly_graph.fastg finished!
+2022-06-02 15:36:24,059 - INFO: Slimming assembly graphs finished.
+
+2022-06-02 15:36:24,059 - INFO: Extracting embplant_pt from the assemblies ...
+2022-06-02 15:36:24,060 - INFO: Disentangling AAz/extended_spades/K115/assembly_graph.fastg.extend-embplant_pt-embplant_mt.fastg as a circular genome ... 
+2022-06-02 15:36:24,081 - INFO: Disentangling failed: 'Incomplete/Complicated graph: please check around EDGE_1636!'
+2022-06-02 15:36:24,081 - INFO: Scaffolding disconnected contigs using SPAdes scaffolds ... 
+2022-06-02 15:36:24,081 - WARNING: Assembly based on scaffolding may not be as accurate as the ones directly exported from the assembly graph.
+2022-06-02 15:36:24,081 - INFO: Disentangling AAz/extended_spades/K115/assembly_graph.fastg.extend-embplant_pt-embplant_mt.fastg as a circular genome ... 
+2022-06-02 15:36:24,087 - INFO: Disentangling failed: 'No new connections.'
+2022-06-02 15:36:24,087 - INFO: Disentangling AAz/extended_spades/K115/assembly_graph.fastg.extend-embplant_pt-embplant_mt.fastg as a/an embplant_pt-insufficient graph ... 
+2022-06-02 15:36:24,193 - INFO: Vertex_1612_1638_1632_1662_1652 #copy = 2
+2022-06-02 15:36:24,193 - INFO: Vertex_1636 #copy = 1
+2022-06-02 15:36:24,193 - INFO: Vertex_1658 #copy = 1
+2022-06-02 15:36:24,193 - INFO: Vertex_728_1644 #copy = 1
+2022-06-02 15:36:24,193 - INFO: Average embplant_pt kmer-coverage = 96.8
+2022-06-02 15:36:24,194 - INFO: Average embplant_pt base-coverage = 403.3
+2022-06-02 15:36:24,194 - INFO: Writing output ...
+2022-06-02 15:36:24,271 - WARNING: More than one structure (gene order) produced ...
+2022-06-02 15:36:24,271 - WARNING: Please check the final result to confirm whether they are simply different in SSC direction (two flip-flop configurations)!
+2022-06-02 15:36:24,273 - INFO: Writing PATH1 of embplant_pt scaffold(s) to AAz/embplant_pt.K115.scaffolds.graph1.1.path_sequence.fasta
+2022-06-02 15:36:24,276 - INFO: Writing PATH2 of embplant_pt scaffold(s) to AAz/embplant_pt.K115.scaffolds.graph1.2.path_sequence.fasta
+2022-06-02 15:36:24,276 - INFO: Writing GRAPH to AAz/embplant_pt.K115.contigs.graph1.selected_graph.gfa
+2022-06-02 15:36:24,277 - INFO: Result status of embplant_pt: 1 scaffold(s)
+2022-06-02 15:36:24,293 - INFO: Writing output finished.
+2022-06-02 15:36:24,293 - INFO: Please ...
+2022-06-02 15:36:24,293 - INFO: load the graph file 'assembly_graph.fastg.extend-embplant_pt-embplant_mt.fastg' in K115
+2022-06-02 15:36:24,294 - INFO: load the CSV file 'assembly_graph.fastg.extend-embplant_pt-embplant_mt.csv' in K115
+2022-06-02 15:36:24,294 - INFO: visualize and confirm the incomplete result in Bandage.
+2022-06-02 15:36:24,294 - INFO: If the result is nearly complete, 
+2022-06-02 15:36:24,294 - INFO: you can also adjust the arguments according to https://github.com/Kinggerm/GetOrganelle/wiki/FAQ#what-should-i-do-with-incomplete-resultbroken-assembly-graph
+2022-06-02 15:36:24,294 - INFO: If you have questions for us, please provide us with the get_org.log.txt file and the post-slimming graph in the format you like!
+2022-06-02 15:36:24,294 - INFO: Extracting embplant_pt from the assemblies finished.
+
+
+Total cost 1199.61 s
+Thank you!

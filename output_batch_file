@@ -1,0 +1,15 @@
+#!/bin/bash
+#SBATCH --job-nameexample
+#SBATCH --partition=hpc
+#SBATCH --mem=16g
+#SBATCH --time=05:00:00
+#SBATCH --output=%.out
+#SBATCH --error=%x.err
+source $HOME/.bash_profile
+
+get_organelle_from_reads.py -1 /Users/lewiswood/Desktop/test_python/02.trimmed/BRI_002/BRI_002_1P.fastq.gz -2 /Users/lewiswood/Desktop/test_python/02.trimmed/BRI_002/BRI_002_2P.fastq.gz -t 1 -o waaay -F embplant_pt -R 10
+
+get_organelle_from_reads.py -1 /Users/lewiswood/Desktop/test_python/02.trimmed/BRI_005/BRI_005_1P.fastq.gz -2 /Users/lewiswood/Desktop/test_python/02.trimmed/BRI_005/BRI_005_2P.fastq.gz -t 1 -o waaay -F embplant_pt -R 10
+
+get_organelle_from_reads.py -1 /Users/lewiswood/Desktop/test_python/02.trimmed/BRI_009/BRI_009_1P.fastq.gz -2 /Users/lewiswood/Desktop/test_python/02.trimmed/BRI_009/BRI_009_2P.fastq.gz -t 1 -o waaay -F embplant_pt -R 10
+
